@@ -20,6 +20,12 @@ io.on('connection', (client) => {
    
     console.log('usuario conectado');
 
+     //emitir mensaje al cliente de bienvenida
+     client.emit('enviarMensaje', {
+        usuario: 'Administrador',
+        mensaje: 'Bienvenido a esta aplicación'
+    })
+
     client.on('disconnect', () => {
       console.log('usuario desconectado');
     });
@@ -29,7 +35,7 @@ io.on('connection', (client) => {
         console.log(mensaje);
     });
 
-
+   
 });
 
 
