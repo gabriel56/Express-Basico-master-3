@@ -29,7 +29,9 @@
         ////Enviar información
         socket.emit('enviarMensaje', {
             usuario: 'Fernando',
-            mensaje: 'Hola mundo'
+            mensaje: 'Hola mundo'   
+        }, function(resp) {
+            console.log('respuesta server:', resp);
         });
 
         //Escuchar desde el servidor
